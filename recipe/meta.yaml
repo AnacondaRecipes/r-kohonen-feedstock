@@ -10,8 +10,8 @@ package:
 source:
   fn: kohonen_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/kohonen_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/kohonen/kohonen_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/kohonen_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/kohonen/kohonen_{{ version }}.tar.gz
   sha256: 429864d72858c29d4187bed48ac1c17cf2ecb08f18090b6bf44dff55174609ab
 
 
