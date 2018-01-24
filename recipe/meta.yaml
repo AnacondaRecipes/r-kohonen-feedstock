@@ -38,17 +38,20 @@ requirements:
     - {{native}}toolchain        # [win]
     - {{posix}}filesystem        # [win]
     - {{posix}}make
+    - llvm-openmp >=4.0.1        # [osx]
 
   host:
     - r-base
     - r-mass
     - r-rcpp >=0.12.7
+    - llvm-openmp >=4.0.1        # [osx]
 
   run:
     - r-base
     - {{native}}gcc-libs         # [win]
     - r-mass
     - r-rcpp >=0.12.7
+    - llvm-openmp >=4.0.1        # [osx]
 
 test:
   commands:
