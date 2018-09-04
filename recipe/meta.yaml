@@ -1,4 +1,4 @@
-{% set version = '3.0.4' %}
+{% set version = '3.0.5' %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -8,11 +8,10 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: kohonen_{{ version }}.tar.gz
   url:
     - {{ cran_mirror }}/src/contrib/kohonen_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/kohonen/kohonen_{{ version }}.tar.gz
-  sha256: 429864d72858c29d4187bed48ac1c17cf2ecb08f18090b6bf44dff55174609ab
+  sha256: 1fe105d206850ced22ae3b397d09894ba5a0f6061348169e5968bfcf6d9c0c84
 
 build:
   merge_build_host: True  # [win]
@@ -31,6 +30,9 @@ requirements:
     - {{native}}toolchain        # [win]
     - {{posix}}filesystem        # [win]
     - {{posix}}make
+    - {{posix}}sed               # [win]
+    - {{posix}}coreutils         # [win]
+    - {{posix}}zip               # [win]
     - llvm-openmp >=4.0.1        # [osx]
 
   host:
@@ -75,7 +77,7 @@ extra:
 # The original CRAN metadata for this package was:
 
 # Package: kohonen
-# Version: 3.0.4
+# Version: 3.0.5
 # Title: Supervised and Unsupervised Self-Organising Maps
 # Author: Ron Wehrens and Johannes Kruisselbrink
 # Maintainer: Ron Wehrens <ron.wehrens@gmail.com>
@@ -85,9 +87,9 @@ extra:
 # Imports: MASS, Rcpp (>= 0.12.7)
 # LinkingTo: Rcpp
 # NeedsCompilation: yes
-# Packaged: 2017-08-28 15:23:15 UTC; ron
+# Packaged: 2018-05-25 09:01:36 UTC; ron
 # Repository: CRAN
-# Date/Publication: 2017-08-28 18:51:19 UTC
+# Date/Publication: 2018-05-25 09:37:56 UTC
 
 # See
 # http://docs.continuum.io/conda/build.html for
